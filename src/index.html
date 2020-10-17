@@ -15,26 +15,8 @@
     <!-- it allows react to render on browser by taking all the stuff out of react -->
     <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.development.js"></script>
 
-    <script>
-        //your code will go here
-
-        //its just a stamp, it will be useful only if we'll be use it
-        //Everytime App is called it is going to stamp a div and inside it an h1
-        const App = () => {
-            return (
-                React.createElement(
-                    "div",
-                    {},         //any attribute will go here like class or id in key-value pair
-                    React.createElement("h1", {} , "Adopt-Me"),          //it can be multiple as well, as a div can have multiple children
-                    React.createElement("h1", {} , "Adopt-Me")
-                )
-            )
-        }
-
-        //it'll overwrite anything inside "root" div
-        ReactDOM.render(
-            React.createElement(App), document.getElementById('root')
-        )
+    <script src="./App.js">
+        //your code will go here    
     </script>
 </body>
 </html>
