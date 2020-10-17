@@ -1,3 +1,6 @@
+import React from "react";
+import { render } from "react-dom";
+
 const Pet = ({ name, animal, breed }) => {
   return React.createElement(
     "div",
@@ -34,4 +37,4 @@ const App = () => {
 };
 
 //it'll overwrite anything inside "root" div
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+render(React.createElement(App), document.getElementById("root"));
