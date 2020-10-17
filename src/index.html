@@ -24,12 +24,14 @@
             return (
                 React.createElement(
                     "div",
-                    {},
+                    {},         //any attribute will go here like class or id in key-value pair
+                    React.createElement("h1", {} , "Adopt-Me"),          //it can be multiple as well, as a div can have multiple children
                     React.createElement("h1", {} , "Adopt-Me")
                 )
             )
         }
 
+        //it'll overwrite anything inside "root" div
         ReactDOM.render(
             React.createElement(App), document.getElementById('root')
         )
