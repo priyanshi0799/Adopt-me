@@ -1,12 +1,12 @@
-const Pet = (props) => {
+const Pet = ({name, animal, breed}) => {
     return (
         React.createElement(
             "div",
             {},         //any attribute will go here like class or id in key-value pair
             [
-            React.createElement("h1", {} , props.name),          //it can be multiple as well, as a div can have multiple children
-            React.createElement("h2", {} , props.animal),
-            React.createElement("h2", {} , props.breed)
+            React.createElement("h1", {} , name),          //it can be multiple as well, as a div can have multiple children
+            React.createElement("h2", {} , animal),
+            React.createElement("h2", {} , breed)
             ]
         )
     )
