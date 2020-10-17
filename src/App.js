@@ -1,12 +1,12 @@
-const Pet = () => {
+const Pet = (props) => {
     return (
         React.createElement(
             "div",
             {},         //any attribute will go here like class or id in key-value pair
             [
-            React.createElement("h1", {} , "Joey"),          //it can be multiple as well, as a div can have multiple children
-            React.createElement("h2", {} , "Chandler"),
-            React.createElement("h2", {} , "Ross")
+            React.createElement("h1", {} , props.name),          //it can be multiple as well, as a div can have multiple children
+            React.createElement("h2", {} , props.animal),
+            React.createElement("h2", {} , props.breed)
             ]
         )
     )
@@ -23,9 +23,9 @@ const App = () => {
             {},         //any attribute will go here like class or id in key-value pair
             [
             React.createElement("h1", {} , "Adopt-Me"),          //it can be multiple as well, as a div can have multiple children
-            React.createElement(Pet),
-            React.createElement(Pet),
-            React.createElement(Pet),
+            React.createElement(Pet , {name: 'Joey', animal: 'Dog', breed: 'Havenese'}),
+            React.createElement(Pet , {name: 'Chandler', animal: 'Bird', breed: 'Cockateail'}),
+            React.createElement(Pet , {name: 'Ross', animal: 'Cat', breed: 'Mixed'}),
             ]
         )
     )
