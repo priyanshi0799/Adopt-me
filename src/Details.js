@@ -1,9 +1,10 @@
 import React from "react";
 import pet from "@frontendmasters/pet";
 import Carousal from "./Carousal";
+import ErrorBoundary from "./ErrorBoundary";
 
 //arrow functions dont create new contexts
-export default class Details extends React.Component {
+class Details extends React.Component {
   constructor(props) {
     super(props);
 
@@ -13,6 +14,7 @@ export default class Details extends React.Component {
     loading: true,
   };
   componentDidMount() {
+    // throw new Error("lol");
     pet.animal(this.props.id).then(({ animal }) => {
       this.setState({
         name: animal.name,
@@ -44,4 +46,12 @@ export default class Details extends React.Component {
       </div>
     );
   }
+}
+
+export default function DetailsWithErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Details {...props} />
+    </ErrorBoundary>
+  );
 }
