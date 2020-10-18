@@ -1,5 +1,6 @@
 import React from "react";
 import pet from "@frontendmasters/pet";
+import Carousal from "./Carousal";
 
 //arrow functions dont create new contexts
 export default class Details extends React.Component {
@@ -33,6 +34,7 @@ export default class Details extends React.Component {
     const { animal, name, location, description, media, breed } = this.state;
     return (
       <div className="details">
+        <Carousal media={media} />
         <div>
           <h1>{name}</h1>
           <h2>{`${animal} - ${breed} - ${location}`}</h2>
