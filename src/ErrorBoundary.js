@@ -1,11 +1,12 @@
 //mostly code from react.js.org/docs/error-boundaries.html
 
 import React, { Component } from "react";
-import { Link } from "@reach/router";
+import { Link, Redirect } from "@reach/router";
 
 export default class ErrorBoundary extends Component {
   state = {
     hasError: false,
+    redirect: false,
   };
 
   static getDerivedStateFromError() {
@@ -17,7 +18,17 @@ export default class ErrorBoundary extends Component {
   componentDidCatch(error, info) {
     console.error("ErrorBoundary caught", error, info);
   }
+
+  componentDidUpdate() {
+    if (this.state.hasError) {
+      setTimeout(() => this.setState({ redirect: true }), 5000);
+    }
+  }
+
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
     if (this.state.hasError) {
       return (
         <h1>
