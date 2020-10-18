@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import Pet from "./Pet";
-
+import SearchParams from "./SearchParams";
 //its just a stamp, it will be useful only if we'll be use it
 //Everytime App is called it is going to stamp a div and inside it an h1
 const App = () => {
@@ -27,9 +26,7 @@ const App = () => {
   return (
     <div>
       <h1>Adopt-Me</h1>
-      <Pet name="Joey" animal="Dog" breed="Havenese" />
-      <Pet name="Chandler" animal="Bird" breed="Cockateail" />
-      <Pet name="Ross" animal="Cat" breed="Mixed" />
+      <SearchParams />
     </div>
   );
 };
