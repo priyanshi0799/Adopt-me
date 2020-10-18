@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import SearchParams from "./SearchParams";
 import { Router, Link } from "@reach/router";
 import Details from "./Details";
+import ThemeContext from "./ThemeContext";
+
 //its just a stamp, it will be useful only if we'll be use it
 //Everytime App is called it is going to stamp a div and inside it an h1
 const App = () => {
@@ -24,17 +26,19 @@ const App = () => {
   //     React.createElement(Pet, { name: "Ross", animal: "Cat", breed: "Mixed" }),
   //   ]
   // );
-
+  const themeHook = useState("darkblue");
   return (
-    <div>
-      <header>
-        <Link to="/">Adopt-Me</Link>
-      </header>
-      <Router>
-        <SearchParams path="/" />
-        <Details path="/details/:id" />
-      </Router>
-    </div>
+    <ThemeContext.Provider value={themeHook}>
+      <div>
+        <header>
+          <Link to="/">Adopt-Me</Link>
+        </header>
+        <Router>
+          <SearchParams path="/" />
+          <Details path="/details/:id" />
+        </Router>
+      </div>
+    </ThemeContext.Provider>
   );
 };
 
